@@ -46,7 +46,13 @@ class SiriusXtecAuth_Controller_Admin extends Zikula_AbstractController
                 'new_users_groups' => FormUtil::getPassedValue('new_users_groups', array(), 'POST'),
                 'ldap_server' => FormUtil::getPassedValue('ldap_server', false, 'POST'),
                 'ldap_basedn' => FormUtil::getPassedValue('ldap_basedn', false, 'POST'),
-                'ldap_searchattr' => FormUtil::getPassedValue('ldap_searchattr', false, 'POST'));
+                'ldap_searchattr' => FormUtil::getPassedValue('ldap_searchattr', false, 'POST'),
+                'loginXtecApps' => FormUtil::getPassedValue('loginXtecApps', false, 'POST'),
+                'logoutXtecApps' => FormUtil::getPassedValue('logoutXtecApps', false, 'POST'),
+                'gtafURL' => FormUtil::getPassedValue('gtafURL', false, 'POST'),
+                'e13URL' => FormUtil::getPassedValue('e13URL', false, 'POST'),
+				'loginTime' => FormUtil::getPassedValue('loginTime', false, 'POST'),
+				'logoutTime' => FormUtil::getPassedValue('logoutTime', false, 'POST'));
         ModUtil::setVars($this->name,$items);
         LogUtil::registerStatus($this->__('S\'ha actualitzat la configuració del mòdul.'));
         return System::redirect(ModUtil::url('SiriusXtecAuth', 'admin', 'main'));

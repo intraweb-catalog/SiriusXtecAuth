@@ -52,12 +52,39 @@
                <input type="text" name="ldap_searchattr" value="{$MVars.ldap_searchattr}">
            </div>
         </fieldset>
+        <fieldset>
+            <legend>{gt text='Connectivitat amb aplicatius XTEC de gestió'}</legend>
+            <div class="z-formrow">
+               <label for="loginXtecApps">{gt text="Valida a gtaf i e13 en validar-se:"}</label>
+               <input type="checkbox" name="loginXtecApps" value="1" {if $MVars.loginXtecApps} checked="true"{/if}>
+           </div>
+           <div class="z-formrow">
+               <label for="logoutXtecApps">{gt text="Tanca la sessió del gtaf i e13 en sortir:"}</label>
+               <input type="checkbox" name="logoutXtecApps" value="1" {if $MVars.logoutXtecApps} checked="true"{/if}>
+           </div>
+           <div class="z-formrow">
+               <label for="gtafURL">{gt text="URL del gtaf:"}</label>
+               <input type="text" name="gtafURL" value="{$MVars.gtafURL}">
+           </div>
+           <div class="z-formrow">
+               <label for="e13URL">{gt text="URL de l'13:"}</label>
+               <input type="text" name="e13URL" value="{$MVars.e13URL}">
+           </div>
+		   <div class="z-formrow">
+               <label for="loginTime">{gt text="Temps (ms) per la pantalla de validació:"}</label>
+               <input type="text" name="loginTime" value="{$MVars.loginTime}">
+           </div>
+		   <div class="z-formrow">
+               <label for="logoutTime">{gt text="Temps (ms) per la pantalla de tancament:"}</label>
+               <input type="text" name="logoutTime" value="{$MVars.logoutTime}">
+           </div>
+        </fieldset>       
     </form>
     <div id="botons" class="z-buttonrow z-buttons z-center">
         <button id='btn_save' class="z-bt-save" type="button" onclick="javascript:desa();" title="{gt text="Desa"}">{gt text="Desa"}</button>
         <button id="btn_cancel" class="z-bt-cancel"  type="button"  onclick="javascript:cancel();" title="{gt text="Cancel·la"}">{gt text="Cancel·la"}</button>
     </div>
-    </div>
+    
 <script>
 function cancel(){
     // Evitar el submit múltiple. Desactivar botó

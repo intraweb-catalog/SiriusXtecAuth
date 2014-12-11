@@ -26,7 +26,7 @@ class SiriusXtecAuth_Version extends Zikula_AbstractVersion
         $meta['displayname'] = $this->__('SiriusXtecAuth');
         $meta['description'] = $this->__('Gestiona la validació a Sirius des de XTEC-ldap');
         $meta['url'] = $this->__('SiriusXtecAuth');
-        $meta['version'] = '1.0.0';
+        $meta['version'] = '1.0.1';
         $meta['securityschema'] = array('SiriusXtecAuth::' => '::');
 
         return $meta;
