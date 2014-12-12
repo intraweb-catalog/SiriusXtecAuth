@@ -14,11 +14,12 @@ class SiriusXtecAuth_Controller_User extends Zikula_AbstractController
 	public function logingXtecApps($args)
 	{
 		$uname = FormUtil::getPassedValue('uname', isset($args['uname']) ? $args['uname'] : '', 'REQUEST');
-		$pass = FormUtil::getPassedValue('pass', isset($args['pass']) ? $args['pass'] : '', 'REQUEST');	
+		$pass = FormUtil::getPassedValue('pass', isset($args['pass']) ? $args['pass'] : '', 'REQUEST');
+		$pass = urldecode(base64_decode($pass));	
 		$logtype = FormUtil::getPassedValue('logtype', isset($args['logtype']) ? $args['logtype'] : '', 'REQUEST');
-		if ($logtype = 'in') {
+		if ($logtype == 'in') {
 			$sctime = ModUtil::getVar('SiriusXtecAuth','loginTime',0);
-		} elseif ($logtype = 'out') {
+		} elseif ($logtype == 'out') {
 			$sctime = ModUtil::getVar('SiriusXtecAuth','logoutTime',0);
 		} else {
 			$sctime = 0;

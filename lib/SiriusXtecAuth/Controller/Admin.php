@@ -18,6 +18,7 @@ class SiriusXtecAuth_Controller_Admin extends Zikula_AbstractController
             return LogUtil::registerPermissionError();
         }
         $MVars = ModUtil::getVar($this->name);
+		$login_redirect = ModUtil::getVar('Users','login_redirect');
         $allGroups = UserUtil::getGroups();
         
         foreach ($allGroups as $key => $group) {
@@ -28,6 +29,7 @@ class SiriusXtecAuth_Controller_Admin extends Zikula_AbstractController
                 $allGroups[$key]['sel'] = 0;
             }
         }
+		$this->view->assign('login_redirect',$login_redirect);
         $this->view->assign('MVars', $MVars);
         $this->view->assign('allGroups',$allGroups);
         return $this->view->fetch('SiriusXtecAuth_admin_config.tpl');

@@ -34,8 +34,8 @@ class SiriusXtecAuth_Installer extends Zikula_AbstractInstaller
                              'logoutXtecApps' => false,
                              'gtafURL' => 'aplitic.xtec.cat/pls/gafoas/pk_for_mod_menu.p_for_opcions_menu?p_perfil=RES',
                              'e13URL' => 'aplitic.xtec.cat/pls/e13_formacio_gaf/formacio_gaf.inici',
-							 'loginTime' => 2000,
-							 'logoutTime' => 1000));
+							 'loginTime' => 200,
+							 'logoutTime' => 200));
         // register handler
         EventUtil::registerPersistentModuleHandler('SiriusXtecAuth', 'module.users.ui.login.failed', array('SiriusXtecAuth_Listeners', 'trySiriusXtecAuth'));
         EventUtil::registerPersistentModuleHandler('SiriusXtecAuth', 'module.users.ui.logout.succeeded', array('SiriusXtecAuth_Listeners', 'logoutXtecApps'));
@@ -60,8 +60,8 @@ class SiriusXtecAuth_Installer extends Zikula_AbstractInstaller
                                     'logoutXtecApps' => false,
                                     'gtafURL' => 'aplitic.xtec.cat/pls/gafoas/pk_for_mod_menu.p_for_opcions_menu?p_perfil=RES',
                                     'e13URL' => 'aplitic.xtec.cat/pls/e13_formacio_gaf/formacio_gaf.inici',
-									'loginTime' => 2000,
-							 		'logoutTime' => 1000));
+									'loginTime' => 200,
+							 		'logoutTime' => 200));
             case '1.0.1':
                 //This is the current version. Here next changes will be added
         }        

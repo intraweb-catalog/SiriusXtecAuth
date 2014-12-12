@@ -27,7 +27,7 @@ class SiriusXtecAuth_Listeners
 
         $uname = $authentication_info['login_id'];
         $pass = $authentication_info['pass'];
-    /*    
+
         // check if ldap is active
         if (!ModUtil::getVar('SiriusXtecAuth','ldap_active',false)) return false;
         // checking new users case
@@ -97,11 +97,12 @@ class SiriusXtecAuth_Listeners
         
         @ldap_unbind($ldap_ds);
         UserUtil::setUserByUid($userid);
-        */
+        
         if (!ModUtil::getVar('SiriusXtecAuth','loginXtecApps',false)) {
             return System::redirect(System::getHomepageUrl());
         } else {
-            return System::redirect(ModUtil::url('SiriusXtecAuth', 'user', 'logingXtecApps',array('uname'=>$uname,'pass'=>$pass,'logtype'=>'in')));
+			$pass_e = urlencode(base64_encode($pass));
+            return System::redirect(ModUtil::url('SiriusXtecAuth', 'user', 'logingXtecApps',array('uname'=>$uname,'pass'=>$pass_e,'logtype'=>'in')));
         }
 
     }
@@ -110,7 +111,8 @@ class SiriusXtecAuth_Listeners
         if (!ModUtil::getVar('SiriusXtecAuth','logoutXtecApps',false)) {
             return true;
         } else {
-            return System::redirect(ModUtil::url('SiriusXtecAuth', 'user', 'logingXtecApps',array('uname'=>'logout','pass'=>'','logtype'=>'out')));
+			$pass_e = urlencode(base64_encode('logout'));
+            return System::redirect(ModUtil::url('SiriusXtecAuth', 'user', 'logingXtecApps',array('uname'=>'logout','pass'=>$pass_e,'logtype'=>'out')));
         }
     }
 }

@@ -3,6 +3,7 @@
     {icon type="config" size="small"}
     <h3>{gt text="Administració del mòdul"}</h3>
 </div>
+{$login_redirect}<br>
    <form name="SiriusXtecAuthConf" id="SiriusXtecAuthConf" class="z-form" action="" method="post" enctype="application/x-www-form-urlencoded">
         <fieldset>
            <legend>{gt text='Configuració de la funcionalitat del mòdul'}</legend>
@@ -62,6 +63,11 @@
                <label for="logoutXtecApps">{gt text="Tanca la sessió del gtaf i e13 en sortir:"}</label>
                <input type="checkbox" name="logoutXtecApps" value="1" {if $MVars.logoutXtecApps} checked="true"{/if}>
            </div>
+		   {if $login_redirect neq 1}
+		       <p class="z-informationmsg">{gt text="El tancament de sessions de gtaf i e13 és possible, ja que en el mòdul 'Users', el paràmetre 'WCAG-compliant log-in and log-out' no està operatiu. Només caldrà ajustar el valor del temps de la pantalla de tancament per optimitzar l'ús."}</p>
+		   {else}
+			   <p class="z-warningmsg">{gt text="El tancament de sessions de gtaf i 13 no és possible. Per poder-lo utilitzar cal habilitar al mòdul 'Users' el paràmetre 'WCAG-compliant log-in and log-out'."}</p>
+		   {/if}
            <div class="z-formrow">
                <label for="gtafURL">{gt text="URL del gtaf:"}</label>
                <input type="text" name="gtafURL" value="{$MVars.gtafURL}">
