@@ -73,7 +73,7 @@
                <input type="text" name="gtafURL" value="{$MVars.gtafURL}">
            </div>
            <div class="z-formrow">
-               <label for="e13URL">{gt text="URL de l'13:"}</label>
+               <label for="e13URL">{gt text="URL de l'e13:"}</label>
                <input type="text" name="e13URL" value="{$MVars.e13URL}">
            </div>
 		   <div class="z-formrow">
