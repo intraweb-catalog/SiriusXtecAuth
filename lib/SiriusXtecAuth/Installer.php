@@ -32,6 +32,8 @@ class SiriusXtecAuth_Installer extends Zikula_AbstractInstaller
                              'iw_lastnames' => false,
                              'loginXtecApps' => false,
                              'logoutXtecApps' => false,
+                             'gtafProtocol' => 'http',
+                             'e13Protocol' => 'http',
                              'gtafURL' => 'aplitic.xtec.cat/pls/gafoas/pk_for_mod_menu.p_for_opcions_menu?p_perfil=RES',
                              'e13URL' => 'aplitic.xtec.cat/pls/e13_formacio_gaf/formacio_gaf.inici',
 							 'loginTime' => 200,
@@ -63,6 +65,9 @@ class SiriusXtecAuth_Installer extends Zikula_AbstractInstaller
 									'loginTime' => 200,
 							 		'logoutTime' => 200));
             case '1.0.1':
+                $this->setVars(array('gtafProtocol' => 'http',
+                                     'e13Protocol' => 'http'));
+            case '1.0.2':
                 //This is the current version. Here next changes will be added
         }        
         return true;

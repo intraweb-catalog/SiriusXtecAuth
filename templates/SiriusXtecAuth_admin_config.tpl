@@ -69,8 +69,16 @@
 			   <p class="z-warningmsg">{gt text="El tancament de sessions de gtaf i 13 no és possible. Per poder-lo utilitzar cal habilitar al mòdul 'Users' el paràmetre 'WCAG-compliant log-in and log-out'."}</p>
 		   {/if}
            <div class="z-formrow">
+               <label for="gtafProtocol">{gt text="Protocol de la URL del gtaf:"}</label>
+               <input type="text" name="gtafProtocol" value="{$MVars.gtafProtocol}">
+           </div>
+            <div class="z-formrow">
                <label for="gtafURL">{gt text="URL del gtaf:"}</label>
                <input type="text" name="gtafURL" value="{$MVars.gtafURL}">
+           </div>
+           <div class="z-formrow">
+               <label for="e13Protocol">{gt text="Protocol de la URL de l'e13:"}</label>
+               <input type="text" name="e13Protocol" value="{$MVars.e13Protocol}">
            </div>
            <div class="z-formrow">
                <label for="e13URL">{gt text="URL de l'e13:"}</label>

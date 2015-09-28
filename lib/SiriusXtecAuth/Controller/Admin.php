@@ -51,6 +51,8 @@ class SiriusXtecAuth_Controller_Admin extends Zikula_AbstractController
                 'ldap_searchattr' => FormUtil::getPassedValue('ldap_searchattr', false, 'POST'),
                 'loginXtecApps' => FormUtil::getPassedValue('loginXtecApps', false, 'POST'),
                 'logoutXtecApps' => FormUtil::getPassedValue('logoutXtecApps', false, 'POST'),
+                'gtafProtocol' => FormUtil::getPassedValue('gtafProtocol', false, 'POST'),
+                'e13Protocol' => FormUtil::getPassedValue('e13Protocol', false, 'POST'),
                 'gtafURL' => FormUtil::getPassedValue('gtafURL', false, 'POST'),
                 'e13URL' => FormUtil::getPassedValue('e13URL', false, 'POST'),
 				'loginTime' => FormUtil::getPassedValue('loginTime', false, 'POST'),

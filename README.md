@@ -19,6 +19,10 @@ Changelog
 
 ### Master branch
 
+### SiriusXtecAuth 1.0.2 (2015/09/28)
+
+  - Add protocol vars for the URLs on Basic Authentication
+
 ### SiriusXtecAuth 1.0.1 (2014/12/15)
 
   - Add Http Basic Authentication feature to two apps (checked for gtaf and e13)

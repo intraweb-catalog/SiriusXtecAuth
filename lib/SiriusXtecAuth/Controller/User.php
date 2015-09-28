@@ -24,9 +24,11 @@ class SiriusXtecAuth_Controller_User extends Zikula_AbstractController
 		} else {
 			$sctime = 0;
 		}
-		$val = 'http://' . $uname . ':' . $pass . '@';
-        $this->view->assign('gtafLogin', $val . ModUtil::getVar('SiriusXtecAuth','gtafURL',false));
-        $this->view->assign('e13Login', $val . ModUtil::getVar('SiriusXtecAuth','e13URL',false));
+		//$val = 'http://' . $uname . ':' . $pass . '@';
+                $val1 = ModUtil::getVar('SiriusXtecAuth','gtafProtocol',false) . '://' . $uname . ':' . $pass . '@';
+                $val2 = ModUtil::getVar('SiriusXtecAuth','e13Protocol',false) . '://' . $uname . ':' . $pass . '@';
+        $this->view->assign('gtafLogin', $val1 . ModUtil::getVar('SiriusXtecAuth','gtafURL',false));
+        $this->view->assign('e13Login', $val2 . ModUtil::getVar('SiriusXtecAuth','e13URL',false));
         $this->view->assign('logoutXtecApps', ModUtil::getVar('SiriusXtecAuth','logoutXtecApps',false));
 		$this->view->assign('sctime',$sctime);
 		$this->view->assign('logtype',$logtype);
